@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import Masonry from "react-responsive-masonry";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
@@ -47,7 +47,7 @@ const galleryImages = [
 		alt: "Wedding bouquet",
 	},
 	{
-		url: "https://images.unsplash.com/photo-1548302040-5305e4853dc1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3ZWRkaW5nJTIwa2lzcyUyMG1vbWVudHxlbnwxfHx8fDE3NjA2ODAwODN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+		url: "https://images.unsplash.com/photo-1548302040-5305e4853dc1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3ZWRkaW5nJTIwayB1c3MlMjBtb21lbnR8ZW58MXx8fHwxNzYwNjgwMDgzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
 		category: "candid",
 		alt: "Wedding kiss",
 	},
@@ -86,6 +86,24 @@ const galleryImages = [
 export function GallerySection() {
 	const [selectedImage, setSelectedImage] = useState(null);
 	const [activeTab, setActiveTab] = useState("all");
+	const [columnCount, setColumnCount] = useState(3);
+
+	// ✅ SSR-safe: Calculate columns only on client
+	useEffect(() => {
+		const updateColumns = () => {
+			if (window.innerWidth < 768) {
+				setColumnCount(1);
+			} else if (window.innerWidth < 1024) {
+				setColumnCount(2);
+			} else {
+				setColumnCount(3);
+			}
+		};
+
+		updateColumns();
+		window.addEventListener("resize", updateColumns);
+		return () => window.removeEventListener("resize", updateColumns);
+	}, []);
 
 	const filteredImages =
 		activeTab === "all"
@@ -125,15 +143,7 @@ export function GallerySection() {
 					</TabsList>
 
 					<TabsContent value={activeTab} className="mt-0">
-						<Masonry
-							columnsCount={
-								window.innerWidth < 768
-									? 1
-									: window.innerWidth < 1024
-									? 2
-									: 3
-							}
-							gutter="1rem">
+						<Masonry columnsCount={columnCount} gutter="1rem">
 							{filteredImages.map((image, index) => (
 								<motion.div
 									key={index}
