@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { useState } from "react";
 import { motion } from "motion/react";
 import { Mail, Phone, Instagram, Send } from "lucide-react";
@@ -17,15 +17,13 @@ export function ContactSection() {
 		message: "",
 	});
 
-	const handleSubmit = (e: React.FormEvent) => {
+	const handleSubmit = (e) => {
 		e.preventDefault();
 		toast.success("Thank you! We'll get back to you within 24 hours.");
 		setFormData({ name: "", email: "", phone: "", date: "", message: "" });
 	};
 
-	const handleChange = (
-		e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-	) => {
+	const handleChange = (e) => {
 		setFormData({ ...formData, [e.target.name]: e.target.value });
 	};
 

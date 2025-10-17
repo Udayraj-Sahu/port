@@ -22,6 +22,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/AboutSection.jsx", "components/ContactSection.jsx", "components/Footer.jsx", "components/GallerySection.jsx", "components/HeroSection.jsx", "components/Navigation.jsx", "components/ServicesSection.jsx", "components/TestimonialsSection.jsx"],
   "exclude": ["node_modules"]
 }

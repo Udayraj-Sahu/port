@@ -21,7 +21,7 @@ export function Navigation() {
 	}, []);
 
 	// ✅ ScrollToSection guarded for SSR
-	const scrollToSection = (id: string) => {
+	const scrollToSection = (id) => {
 		if (typeof document !== "undefined") {
 			const element = document.getElementById(id);
 			if (element) {
