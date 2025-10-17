@@ -1,4 +1,5 @@
-'use client'
+"use client";
+
 import { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import { Menu, X, Camera } from "lucide-react";
@@ -7,19 +8,26 @@ export function Navigation() {
 	const [isScrolled, setIsScrolled] = useState(false);
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+	// ✅ Scroll listener guarded for SSR
 	useEffect(() => {
+		if (typeof window === "undefined") return;
+
 		const handleScroll = () => {
 			setIsScrolled(window.scrollY > 50);
 		};
+
 		window.addEventListener("scroll", handleScroll);
 		return () => window.removeEventListener("scroll", handleScroll);
 	}, []);
 
+	// ✅ ScrollToSection guarded for SSR
 	const scrollToSection = (id: string) => {
-		const element = document.getElementById(id);
-		if (element) {
-			element.scrollIntoView({ behavior: "smooth" });
-			setIsMobileMenuOpen(false);
+		if (typeof document !== "undefined") {
+			const element = document.getElementById(id);
+			if (element) {
+				element.scrollIntoView({ behavior: "smooth" });
+				setIsMobileMenuOpen(false);
+			}
 		}
 	};
 

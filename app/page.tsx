@@ -7,7 +7,7 @@ import { ServicesSection } from "@/components/ServicesSection";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
-import "./global.css";
+
 export default function Home() {
 	return (
 		<div className="min-h-screen">
