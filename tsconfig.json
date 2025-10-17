@@ -35,8 +35,8 @@
 		"components/Navigation.jsx",
 		"components/ServicesSection.jsx",
 		"components/TestimonialsSection.jsx",
-		"app/page.jsx",
-		"app/layout.jsx"
+		"app/page.js",
+		"app/layout.js"
 , "components/ui/button.tsx"	],
 	"exclude": ["node_modules"]
 }
