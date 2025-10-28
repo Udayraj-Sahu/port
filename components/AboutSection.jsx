@@ -3,7 +3,6 @@
 import { motion } from "framer-motion"; // ✅ correct import
 import { Award, Camera, Heart, Users } from "lucide-react";
 
-
 export function AboutSection() {
 	const stats = [
 		{ icon: Camera, label: "Weddings Captured", value: "500+" },
@@ -24,7 +23,7 @@ export function AboutSection() {
 						className="relative">
 						<div className="aspect-square rounded-2xl overflow-hidden">
 							<img
-								src="https://picsum.photos/200/300"
+								src="/about_pic.png"
 								alt="Rishi Photography - Wedding Photographer"
 								className="w-full h-full object-cover"
 								width={1080}
@@ -45,11 +44,10 @@ export function AboutSection() {
 						<h2 className="mb-6">About Rishi</h2>
 						<p className="text-gray-600 mb-4">
 							Hi! I&apos;m Sarah, a passionate wedding
-							photographer based in Jabalpur with over 5 years
-							of experience capturing love stories. My style
-							blends candid moments with artistic portraits,
-							creating timeless images that you&apos;ll treasure
-							forever.
+							photographer based in Jabalpur with over 5 years of
+							experience capturing love stories. My style blends
+							candid moments with artistic portraits, creating
+							timeless images that you&apos;ll treasure forever.
 						</p>
 						<p className="text-gray-600 mb-6">
 							I believe every wedding tells a unique story. My
