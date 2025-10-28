@@ -18,28 +18,28 @@ export function TestimonialsSection() {
 			date: "June 2024",
 			rating: 5,
 			text: "Rishi captured our wedding day perfectly! She made us feel so comfortable and the photos are absolutely stunning. Every moment was documented beautifully - from getting ready to our first dance. We couldn't be happier!",
-			image: "/hero_section_1.jpg",
+			image: "/hero_section_2.jpg",
 		},
 		{
 			name: "Priya & Rahul",
 			date: "March 2024",
 			rating: 5,
 			text: "Working with Rishi was an absolute dream! She understood our cultural traditions and captured both the vibrant traditional ceremonies and intimate moments with such artistry. The photos tell our story perfectly.",
-			image: "https://images.unsplash.com/photo-1586934280706-262a90ddd743?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmRpYW4lMjB3ZWRkaW5nJTIwdHJhZGl0aW9uYWx8ZW58MXx8fHwxNzYwNjgwMDg0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+			image: "/hero_section_1.jpg",
 		},
 		{
 			name: "Prashan & Nidhi",
 			date: "September 2023",
 			rating: 5,
 			text: "We couldn't have asked for a better photographer! Rishi's attention to detail is incredible - she captured moments we didn't even know happened. Her creativity and professionalism exceeded all our expectations.",
-			image: "https://images.unsplash.com/photo-1631225893179-4d6e349189c2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3ZWRkaW5nJTIwY2VyZW1vbnklMjBjb3VwbGV8ZW58MXx8fHwxNzYwNjgwMDcxfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+			image: "/hero_section_3.jpg",
 		},
 		{
 			name: "Vishal & Neha",
 			date: "November 2023",
 			rating: 5,
 			text: "Rishi is not just a photographer, she's an artist! Our engagement and wedding photos are magazine-worthy. She has an eye for finding the perfect light and angles. Highly recommend!",
-			image: "https://images.unsplash.com/photo-1728022615324-78dbe04cac43?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcmUlMjB3ZWRkaW5nJTIwcGhvdG9zaG9vdHxlbnwxfHx8fDE3NjA2ODAwNzN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+			image: "/hero_section_1.jpg",
 		},
 	];
 
@@ -80,7 +80,9 @@ export function TestimonialsSection() {
 													<div className="md:col-span-1">
 														<div className="aspect-square rounded-lg overflow-hidden">
 															<img
-																src="https://picsum.photos/200/300"
+																src={
+																	testimonial.image
+																}
 																alt="imgae"
 																className="w-full h-full object-cover"
 															/>
