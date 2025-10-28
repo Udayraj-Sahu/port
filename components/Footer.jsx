@@ -9,11 +9,11 @@ export function Footer() {
 					<div>
 						<div className="flex items-center gap-2 mb-4">
 							<Camera className="w-6 h-6" />
-							<span>Sarah Williams</span>
+							<span>Rishi Photography</span>
 						</div>
 						<p className="text-gray-400">
 							Capturing love stories with passion and artistry
-							since 2015.
+							since 2018.
 						</p>
 					</div>
 
@@ -57,19 +57,13 @@ export function Footer() {
 						<h4 className="mb-4">Follow Us</h4>
 						<div className="flex gap-4">
 							<a
-								href="https://instagram.com/sarahwilliamsphotography"
+								href="https://www.instagram.com/rishi_photography_55?igsh=MXUyaG9tanpzM2lx"
 								target="_blank"
 								rel="noopener noreferrer"
 								className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
 								<Instagram className="w-5 h-5" />
 							</a>
-							<a
-								href="https://facebook.com/sarahwilliamsphotography"
-								target="_blank"
-								rel="noopener noreferrer"
-								className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
-								<Facebook className="w-5 h-5" />
-							</a>
+							
 							<a
 								href="mailto:hello@sarahwilliams.com"
 								className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
@@ -81,7 +75,7 @@ export function Footer() {
 
 				<div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-gray-400">
 					<p>
-						© 2025 Sarah Williams Photography. All rights reserved.
+						© 2025 Rishi Photography. All rights reserved.
 					</p>
 					<p className="flex items-center gap-2">
 						Made with{" "}
