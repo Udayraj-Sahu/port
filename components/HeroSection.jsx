@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ChevronDown } from "lucide-react";
@@ -59,7 +59,7 @@ export function HeroSection() {
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ delay: 0.7, duration: 0.8 }}
 						className="mb-4">
-						Sarah Williams Photography
+						Rishi Photography
 					</motion.h1>
 					<motion.p
 						initial={{ opacity: 0, y: 20 }}

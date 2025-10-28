@@ -148,7 +148,7 @@ export function ContactSection() {
 							</a>
 
 							<a
-								href="https://wa.me/15550000000"
+								href="https://wa.me/+919977879238"
 								target="_blank"
 								rel="noopener noreferrer"
 								className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group">
@@ -158,13 +158,13 @@ export function ContactSection() {
 								<div>
 									<p className="mb-1">Phone / WhatsApp</p>
 									<p className="text-gray-600">
-										+1 (555) 000-0000
+										+919977879238
 									</p>
 								</div>
 							</a>
 
 							<a
-								href="https://instagram.com/sarahwilliamsphotography"
+								href="https://www.instagram.com/rishi_photography_55?igsh=MXUyaG9tanpzM2lx"
 								target="_blank"
 								rel="noopener noreferrer"
 								className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group">
@@ -174,7 +174,7 @@ export function ContactSection() {
 								<div>
 									<p className="mb-1">Instagram</p>
 									<p className="text-gray-600">
-										@sarahwilliamsphotography
+										@rishi_photography_55
 									</p>
 								</div>
 							</a>

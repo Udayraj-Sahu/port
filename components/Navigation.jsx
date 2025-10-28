@@ -65,7 +65,7 @@ export function Navigation() {
 							className={`${
 								isScrolled ? "text-gray-900" : "text-white"
 							}`}>
-							Sarah Williams
+							Rishi Photography
 						</span>
 					</motion.button>
 

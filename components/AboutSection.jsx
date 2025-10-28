@@ -8,8 +8,8 @@ export function AboutSection() {
 	const stats = [
 		{ icon: Camera, label: "Weddings Captured", value: "500+" },
 		{ icon: Heart, label: "Happy Couples", value: "450+" },
-		{ icon: Award, label: "Awards Won", value: "15" },
-		{ icon: Users, label: "Team Members", value: "8" },
+		{ icon: Award, label: "Awards Won", value: "2" },
+		{ icon: Users, label: "Team Members", value: "4" },
 	];
 
 	return (
@@ -25,7 +25,7 @@ export function AboutSection() {
 						<div className="aspect-square rounded-2xl overflow-hidden">
 							<img
 								src="https://picsum.photos/200/300"
-								alt="Sarah Williams - Wedding Photographer"
+								alt="Rishi Photography - Wedding Photographer"
 								className="w-full h-full object-cover"
 								width={1080}
 								height={1080}
@@ -33,7 +33,7 @@ export function AboutSection() {
 						</div>
 						<div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-lg">
 							<p className="text-gray-600">Since</p>
-							<p>2015</p>
+							<p>2018</p>
 						</div>
 					</motion.div>
 
@@ -42,10 +42,10 @@ export function AboutSection() {
 						initial={{ opacity: 0, x: 30 }}
 						whileInView={{ opacity: 1, x: 0 }}
 						viewport={{ once: true }}>
-						<h2 className="mb-6">About Sarah</h2>
+						<h2 className="mb-6">About Rishi</h2>
 						<p className="text-gray-600 mb-4">
 							Hi! I&apos;m Sarah, a passionate wedding
-							photographer based in California with over 9 years
+							photographer based in Jabalpur with over 5 years
 							of experience capturing love stories. My style
 							blends candid moments with artistic portraits,
 							creating timeless images that you&apos;ll treasure
