@@ -18,7 +18,7 @@ export function TestimonialsSection() {
 			date: "June 2024",
 			rating: 5,
 			text: "Rishi captured our wedding day perfectly! She made us feel so comfortable and the photos are absolutely stunning. Every moment was documented beautifully - from getting ready to our first dance. We couldn't be happier!",
-			image: "https://images.unsplash.com/photo-1606217239566-1c893c2e110e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxicmlkZSUyMGdyb29tJTIwcG9ydHJhaXR8ZW58MXx8fHwxNzYwNTU3OTk1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+			image: "/hero_section_1.jpg",
 		},
 		{
 			name: "Priya & Rahul",
