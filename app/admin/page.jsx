@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 import Masonry from "react-responsive-masonry";
 import { supabase } from "@/lib/supabaseClient";
 import { X, UploadCloud, Trash2, Lock } from "lucide-react";
-
+import { Image } from "next/image";
 const BUCKET_NAME = "photos";
 const FOLDER_NAME = "uploads";
 const PASSWORD = "bikyaAdmin123"; // change this!

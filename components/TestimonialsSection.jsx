@@ -9,7 +9,6 @@ import {
 	CarouselPrevious,
 } from "./ui/carousel";
 import { Card, CardContent } from "./ui/card";
-
 export function TestimonialsSection() {
 	const testimonials = [
 		{

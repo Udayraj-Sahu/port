@@ -13,6 +13,8 @@ export const metadata = {
 		"Wedding Studio in Kareli",
 		"Madhya Pradesh Wedding Photographer",
 	],
+	viewport:
+		"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no",
 	authors: [{ name: "Rishi Photography" }],
 	openGraph: {
 		title: "Wedding Photographer in Kareli | Rishi Photography",

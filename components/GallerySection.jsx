@@ -109,7 +109,9 @@ export function GallerySection() {
 
 					<TabsContent value={activeTab} className="mt-0">
 						{filteredImages.length > 0 ? (
-							<Masonry columnsCount={columnCount} gutter="1rem">
+							<Masonry
+								columnsCount={columnCount}
+								gutter="0.75rem">
 								{filteredImages.map((image, index) => (
 									<motion.div
 										key={index}
