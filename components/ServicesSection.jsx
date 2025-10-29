@@ -17,12 +17,12 @@ export function ServicesSection() {
 			name: "Pre-Wedding Shoot",
 			price: "₹24,999",
 			description:
-				"Cinematic pre-wedding shoot at beautiful outdoor locations in Kareli, Narsinghpur & MP.",
+				"Cinematic pre-wedding shoot at scenic outdoor locations in Kareli, Narsinghpur & across Madhya Pradesh.",
 			features: [
-				"2 locations of your choice",
-				"100+ edited images",
+				"2 chosen outdoor locations",
+				"100+ edited photos",
 				"Highlight reel (1 min)",
-				"Drone coverage available",
+				"Drone coverage (optional)",
 				"Outfit & pose guidance",
 			],
 			popular: false,
@@ -31,13 +31,13 @@ export function ServicesSection() {
 			name: "Wedding Photography",
 			price: "₹59,999 – ₹1,49,999",
 			description:
-				"Complete wedding day coverage including candid, traditional & cinematic moments.",
+				"Full-day cinematic wedding coverage with candid and traditional moments beautifully captured.",
 			features: [
-				"Full-day coverage (up to 12 hrs)",
+				"Up to 12 hours of coverage",
 				"2 photographers + 1 videographer",
-				"500–800 edited photos",
+				"500–800 high-quality photos",
 				"Premium wedding album",
-				"Drone & teaser video (optional)",
+				"Drone & teaser video",
 			],
 			popular: true,
 		},
@@ -45,11 +45,11 @@ export function ServicesSection() {
 			name: "Post-Wedding Session",
 			price: "₹29,999",
 			description:
-				"Creative post-wedding couple shoot to relive the romance after your big day.",
+				"Creative couple shoot to relive your wedding memories with cinematic poses and storytelling.",
 			features: [
 				"Outdoor or studio setup",
 				"60+ professionally edited photos",
-				"Cinematic teaser video",
+				"Cinematic short video",
 				"Creative posing & styling",
 			],
 			popular: false,
@@ -58,7 +58,7 @@ export function ServicesSection() {
 			name: "Baby & Maternity Shoot",
 			price: "₹14,999",
 			description:
-				"Capture the joy of parenthood with artistic baby and maternity portraits.",
+				"Capture parenthood and newborn joy with soft, candid photography and elegant themes.",
 			features: [
 				"Studio or home session",
 				"Props & theme setup",
@@ -68,15 +68,29 @@ export function ServicesSection() {
 			popular: false,
 		},
 		{
+			name: "Birthday Shoot",
+			price: "₹12,999",
+			description:
+				"Fun-filled birthday shoot capturing smiles, laughter, and joyful memories for all ages.",
+			features: [
+				"Themed decorations setup",
+				"Candid + group photography",
+				"50–70 edited photos",
+				"Mini highlight video (optional)",
+				"Baby/family portraits",
+			],
+			popular: false,
+		},
+		{
 			name: "Portfolio & Catalogue Shoot",
 			price: "₹19,999",
 			description:
-				"Professional fashion, model & product portfolio shoots for brands and individuals.",
+				"Professional model, product, and brand photography with fashion-oriented direction.",
 			features: [
 				"Studio or outdoor location",
-				"Lighting & styling support",
+				"Lighting & creative styling",
 				"High-end retouching",
-				"Outfit & creative direction",
+				"Outfit & pose direction",
 			],
 			popular: false,
 		},
@@ -84,11 +98,11 @@ export function ServicesSection() {
 			name: "Makeup & Bridal Shoot",
 			price: "₹9,999",
 			description:
-				"Showcase your makeup artistry or bridal look with cinematic portrait photography.",
+				"Showcase your makeup artistry or bridal beauty with cinematic portraits & close-ups.",
 			features: [
 				"Studio lighting setup",
 				"30+ retouched images",
-				"Social-media-ready reels",
+				"Reel-ready short video",
 			],
 			popular: false,
 		},
@@ -116,12 +130,12 @@ export function ServicesSection() {
 						Our Photography Services in Kareli & Narsinghpur
 					</h2>
 					<p className="text-gray-600 max-w-2xl mx-auto">
-						From <strong>pre-wedding</strong> to{" "}
-						<strong>post-wedding</strong> and{" "}
-						<strong>baby shoots</strong>, Rishi Photography offers
-						everything you need to capture your special memories
+						From <strong>weddings</strong> to{" "}
+						<strong>babyshoots</strong> and{" "}
+						<strong>birthday celebrations</strong>, Rishi
+						Photography delivers premium, cinematic experiences
 						across <strong>Kareli</strong>,{" "}
-						<strong>Narsinghpur</strong> and{" "}
+						<strong>Narsinghpur</strong>, and{" "}
 						<strong>Madhya Pradesh</strong>.
 					</p>
 				</motion.div>
@@ -199,9 +213,11 @@ export function ServicesSection() {
 					viewport={{ once: true }}
 					className="mt-12 text-center">
 					<p className="text-gray-700 mb-4">
-						Need a custom package for your event or shoot? We tailor{" "}
-						<strong>wedding</strong>, <strong>baby</strong>, and{" "}
-						<strong>portfolio</strong> sessions to your vision.
+						Looking for a personalized experience? We design custom
+						packages for <strong>weddings</strong>,{" "}
+						<strong>babyshoots</strong>,{" "}
+						<strong>birthday shoots</strong>, and{" "}
+						<strong>portfolio sessions</strong>.
 					</p>
 					<Button
 						onClick={scrollToContact}
@@ -212,9 +228,9 @@ export function ServicesSection() {
 
 				{/* Hidden SEO Keywords */}
 				<p className="hidden">
-					Wedding Photography Kareli, Pre-Wedding Shoot Narsinghpur,
-					Post-Wedding Photoshoot Madhya Pradesh, Babyshoot Kareli MP,
-					Portfolio Photographer Narsinghpur, Catalogue Shoot MP,
+					Wedding Photographer Kareli, Birthday Shoot Narsinghpur, Pre
+					Wedding Photoshoot Madhya Pradesh, Babyshoot Kareli MP,
+					Portfolio Photographer MP, Catalogue Shoot Narsinghpur,
 					Makeup Shoot Kareli, Rishi Photography Services.
 				</p>
 			</div>
