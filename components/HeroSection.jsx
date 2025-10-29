@@ -21,13 +21,14 @@ export function HeroSection() {
 
 	const scrollToGallery = () => {
 		const element = document.getElementById("gallery");
-		if (element) {
-			element.scrollIntoView({ behavior: "smooth" });
-		}
+		if (element) element.scrollIntoView({ behavior: "smooth" });
 	};
 
 	return (
-		<section id="home" className="relative h-screen w-full overflow-hidden">
+		<section
+			id="home"
+			className="relative h-screen w-full overflow-hidden"
+			aria-label="Best Wedding Photographer in Kareli, Narsinghpur">
 			{/* Background Slideshow */}
 			<AnimatePresence mode="wait">
 				<motion.div
@@ -42,39 +43,49 @@ export function HeroSection() {
 						style={{
 							backgroundImage: `url(${heroImages[currentIndex]})`,
 						}}
+						role="img"
+						aria-label="Candid wedding couple photoshoot in Kareli, Narsinghpur"
 					/>
 					<div className="absolute inset-0 bg-black/40" />
 				</motion.div>
 			</AnimatePresence>
 
 			{/* Content Overlay */}
-			<div className="relative z-10 h-full flex flex-col items-center justify-center text-white px-4">
+			<div className="relative z-10 h-full flex flex-col items-center justify-center text-white px-4 text-center">
 				<motion.div
 					initial={{ opacity: 0, y: 30 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ delay: 0.5, duration: 0.8 }}
-					className="text-center max-w-4xl">
+					className="max-w-4xl">
+					{/* 👇 SEO-Optimized H1 */}
 					<motion.h1
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ delay: 0.7, duration: 0.8 }}
-						className="mb-4">
-						Rishi Photography
+						className="text-5xl md:text-6xl font-bold leading-tight mb-6">
+						Best Wedding Photographer in Kareli, Narsinghpur
 					</motion.h1>
-					<motion.p
+
+					{/* 👇 SEO Supporting Subtitle (H2) */}
+					<motion.h2
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ delay: 0.9, duration: 0.8 }}
-						className="mb-8 text-white/90 max-w-2xl mx-auto">
-						Capturing Love Stories Since 2015
-					</motion.p>
+						className="text-xl md:text-2xl text-white/90 font-light mb-6">
+						Cinematic, Candid & Traditional Wedding Photography
+						Across Madhya Pradesh
+					</motion.h2>
+
+					{/* 👇 Keyword-Rich Descriptive Paragraph */}
 					<motion.p
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ delay: 1.1, duration: 0.8 }}
-						className="text-white/80">
-						Timeless moments, authentic emotions, unforgettable
-						memories
+						className="text-white/80 text-lg max-w-2xl mx-auto">
+						We specialize in capturing timeless love stories — from
+						Kareli and Narsinghpur to the heart of Madhya Pradesh.
+						Our cinematic style transforms wedding moments into
+						memories that last forever.
 					</motion.p>
 				</motion.div>
 
@@ -84,7 +95,8 @@ export function HeroSection() {
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
 					transition={{ delay: 1.5, duration: 0.8 }}
-					className="absolute bottom-10">
+					className="absolute bottom-10"
+					aria-label="Scroll to wedding photography gallery">
 					<motion.div
 						animate={{ y: [0, 10, 0] }}
 						transition={{ repeat: Infinity, duration: 2 }}>
@@ -104,6 +116,7 @@ export function HeroSection() {
 								? "bg-white w-8"
 								: "bg-white/50"
 						}`}
+						aria-label={`View slide ${index + 1}`}
 					/>
 				))}
 			</div>

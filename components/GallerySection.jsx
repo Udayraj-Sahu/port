@@ -26,12 +26,16 @@ export function GallerySection() {
 			return;
 		}
 
-		// Format each image with URL + category (from filename prefix)
 		const formatted = data.map((img) => {
 			const categoryName =
 				img.name.split("_")[0]?.toLowerCase() || "uncategorized";
 			const publicUrl = `https://kwxzxaebafblbplakxlk.supabase.co/storage/v1/object/public/${BUCKET_NAME}/${FOLDER_NAME}/${img.name}`;
-			return { url: publicUrl, category: categoryName, alt: img.name };
+			return {
+				url: publicUrl,
+				category: categoryName,
+				// 👇 Add rich descriptive alt text for SEO & accessibility
+				alt: `Candid ${categoryName} wedding photo in Kareli Narsinghpur by Rishi Photography`,
+			};
 		});
 
 		setImages(formatted);
@@ -42,15 +46,13 @@ export function GallerySection() {
 		fetchImages();
 	}, []);
 
-	// 🧩 Handle Tab Change
 	const handleTabChange = (value) => {
 		setActiveTab(value);
-		if (value === "all") {
-			setFilteredImages(images);
-		} else {
-			const filtered = images.filter((img) => img.category === value);
-			setFilteredImages(filtered);
-		}
+		setFilteredImages(
+			value === "all"
+				? images
+				: images.filter((img) => img.category === value)
+		);
 	};
 
 	// 📱 Responsive columns
@@ -60,14 +62,16 @@ export function GallerySection() {
 			else if (window.innerWidth < 1024) setColumnCount(2);
 			else setColumnCount(3);
 		};
-
 		updateColumns();
 		window.addEventListener("resize", updateColumns);
 		return () => window.removeEventListener("resize", updateColumns);
 	}, []);
 
 	return (
-		<section id="gallery" className="py-20 bg-gray-50">
+		<section
+			id="gallery"
+			className="py-20 bg-gray-50"
+			aria-label="Wedding Photography Gallery - Kareli Narsinghpur">
 			<div className="container mx-auto px-4">
 				{/* Header */}
 				<motion.div
@@ -75,10 +79,13 @@ export function GallerySection() {
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true }}
 					className="text-center mb-12">
-					<h2 className="mb-4">Portfolio</h2>
+					<h2 className="text-4xl font-bold mb-4 text-gray-900">
+						Wedding Photography Gallery
+					</h2>
 					<p className="text-gray-600 max-w-2xl mx-auto">
-						A collection of our finest moments captured through the
-						lens
+						A showcase of our best wedding, pre-wedding, and candid
+						moments captured across Kareli & Narsinghpur, Madhya
+						Pradesh.
 					</p>
 				</motion.div>
 
@@ -117,12 +124,13 @@ export function GallerySection() {
 										<img
 											src={image.url}
 											alt={image.alt}
+											title={image.alt}
 											className="w-full h-auto transition-transform duration-500 group-hover:scale-110"
 											loading="lazy"
 										/>
 										<div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
-											<p className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-												View
+											<p className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm">
+												View Full Photo
 											</p>
 										</div>
 									</motion.div>
@@ -130,7 +138,7 @@ export function GallerySection() {
 							</Masonry>
 						) : (
 							<p className="text-center text-gray-500">
-								No images available.
+								No images available in this category.
 							</p>
 						)}
 					</TabsContent>
@@ -147,19 +155,27 @@ export function GallerySection() {
 					onClick={() => setSelectedImage(null)}>
 					<button
 						className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors"
-						onClick={() => setSelectedImage(null)}>
+						onClick={() => setSelectedImage(null)}
+						aria-label="Close full-size image">
 						<X className="w-8 h-8" />
 					</button>
 					<motion.img
 						initial={{ scale: 0.8, opacity: 0 }}
 						animate={{ scale: 1, opacity: 1 }}
 						src={selectedImage}
-						alt="Full screen"
+						alt="Full-screen wedding photo Kareli Narsinghpur"
 						className="max-w-full max-h-full object-contain"
 						onClick={(e) => e.stopPropagation()}
 					/>
 				</motion.div>
 			)}
+
+			{/* Hidden SEO Keyword Helper */}
+			<p className="hidden">
+				Wedding Photography in Kareli, Narsinghpur | Pre-Wedding Shoots
+				MP | Candid Wedding Photographer Kareli | Rishi Photography
+				Gallery Madhya Pradesh
+			</p>
 		</section>
 	);
 }

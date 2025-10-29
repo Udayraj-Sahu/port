@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { motion } from "motion/react";
-import { Mail, Phone, Instagram, Send } from "lucide-react";
+import { Mail, Phone, Instagram, Send, MapPin } from "lucide-react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
@@ -28,17 +28,24 @@ export function ContactSection() {
 	};
 
 	return (
-		<section id="contact" className="py-20 bg-white">
+		<section
+			id="contact"
+			className="py-20 bg-white"
+			aria-label="Contact Rishi Photography - Kareli Narsinghpur Madhya Pradesh">
 			<div className="container mx-auto px-4">
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true }}
 					className="text-center mb-12">
-					<h2 className="mb-4">Lets Connect</h2>
+					<h2 className="text-4xl font-bold mb-4 text-gray-900">
+						Contact Rishi Photography
+					</h2>
 					<p className="text-gray-600 max-w-2xl mx-auto">
-						Ready to book your date or have questions? Fill out the
-						form below or reach out through your preferred method.
+						Book your <strong>wedding photoshoot in Kareli</strong>{" "}
+						or <strong>Narsinghpur</strong> today. Fill out the form
+						below or reach us directly via phone or WhatsApp. We
+						respond within 24 hours.
 					</p>
 				</motion.div>
 
@@ -48,9 +55,12 @@ export function ContactSection() {
 						initial={{ opacity: 0, x: -30 }}
 						whileInView={{ opacity: 1, x: 0 }}
 						viewport={{ once: true }}>
-						<form onSubmit={handleSubmit} className="space-y-6">
+						<form
+							onSubmit={handleSubmit}
+							className="space-y-6"
+							aria-label="Contact form">
 							<div>
-								<Label htmlFor="name">Name *</Label>
+								<Label htmlFor="name">Full Name *</Label>
 								<Input
 									id="name"
 									name="name"
@@ -75,14 +85,17 @@ export function ContactSection() {
 							</div>
 
 							<div>
-								<Label htmlFor="phone">Phone</Label>
+								<Label htmlFor="phone">
+									Phone / WhatsApp *
+								</Label>
 								<Input
 									id="phone"
 									name="phone"
 									type="tel"
+									required
 									value={formData.phone}
 									onChange={handleChange}
-									placeholder="+1 (555) 000-0000"
+									placeholder="+91 9977879238"
 								/>
 							</div>
 
@@ -105,12 +118,15 @@ export function ContactSection() {
 									required
 									value={formData.message}
 									onChange={handleChange}
-									placeholder="Tell us about your wedding day..."
+									placeholder="Tell us about your wedding or shoot details..."
 									rows={5}
 								/>
 							</div>
 
-							<Button type="submit" className="w-full">
+							<Button
+								type="submit"
+								className="w-full bg-blue-600 text-white hover:bg-blue-700"
+								aria-label="Send your wedding photography inquiry">
 								<Send className="w-4 h-4 mr-2" />
 								Send Message
 							</Button>
@@ -124,31 +140,38 @@ export function ContactSection() {
 						viewport={{ once: true }}
 						className="space-y-8">
 						<div>
-							<h3 className="mb-6">Get In Touch</h3>
+							<h3 className="text-2xl font-semibold mb-6 text-gray-900">
+								Get In Touch
+							</h3>
 							<p className="text-gray-600 mb-8">
-								We typically respond within 24 hours. For urgent
-								inquiries, please call or WhatsApp us directly.
+								Reach out to <strong>Rishi Photography</strong>{" "}
+								in <strong>Kareli</strong> for pre-wedding,
+								candid, or cinematic wedding photography. We’re
+								available Monday to Saturday for bookings and
+								consultations.
 							</p>
 						</div>
 
 						{/* Contact Methods */}
 						<div className="space-y-6">
 							<a
-								href="mailto:hello@sarahwilliams.com"
+								href="mailto:rishi-photography@gmail.com"
 								className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group">
 								<div className="w-12 h-12 bg-white rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
 									<Mail className="w-6 h-6 text-gray-700" />
 								</div>
 								<div>
-									<p className="mb-1">Email</p>
+									<p className="font-medium mb-1 text-gray-800">
+										Email
+									</p>
 									<p className="text-gray-600">
-										hello@sarahwilliams.com
+										rishi-photography@gmail.com
 									</p>
 								</div>
 							</a>
 
 							<a
-								href="https://wa.me/+919977879238"
+								href="https://wa.me/919977879238"
 								target="_blank"
 								rel="noopener noreferrer"
 								className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group">
@@ -156,15 +179,17 @@ export function ContactSection() {
 									<Phone className="w-6 h-6 text-gray-700" />
 								</div>
 								<div>
-									<p className="mb-1">Phone / WhatsApp</p>
+									<p className="font-medium mb-1 text-gray-800">
+										Phone / WhatsApp
+									</p>
 									<p className="text-gray-600">
-										+919977879238
+										+91 99778 79238
 									</p>
 								</div>
 							</a>
 
 							<a
-								href="https://www.instagram.com/rishi_photography_55?igsh=MXUyaG9tanpzM2lx"
+								href="https://www.instagram.com/rishi_photography_55"
 								target="_blank"
 								rel="noopener noreferrer"
 								className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group">
@@ -172,25 +197,51 @@ export function ContactSection() {
 									<Instagram className="w-6 h-6 text-gray-700" />
 								</div>
 								<div>
-									<p className="mb-1">Instagram</p>
+									<p className="font-medium mb-1 text-gray-800">
+										Instagram
+									</p>
 									<p className="text-gray-600">
 										@rishi_photography_55
 									</p>
 								</div>
 							</a>
+
+							<div className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg">
+								<div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
+									<MapPin className="w-6 h-6 text-gray-700" />
+								</div>
+								<div>
+									<p className="font-medium mb-1 text-gray-800">
+										Studio Address
+									</p>
+									<p className="text-gray-600">
+										Main Road, Kareli, Narsinghpur, Madhya
+										Pradesh 487221
+									</p>
+								</div>
+							</div>
 						</div>
 
 						{/* Business Hours */}
 						<div className="p-6 bg-gray-50 rounded-lg">
-							<p className="mb-3">Business Hours</p>
+							<p className="font-semibold mb-3 text-gray-800">
+								Business Hours
+							</p>
 							<div className="space-y-2 text-gray-600">
-								<p>Monday - Friday: 9am - 6pm</p>
-								<p>Saturday: 10am - 4pm</p>
-								<p>Sunday: Closed</p>
+								<p>Monday - Saturday: 9:00 AM – 7:00 PM</p>
+								<p>Sunday: Closed (For Booked Shoots Only)</p>
 							</div>
 						</div>
 					</motion.div>
 				</div>
+
+				{/* Hidden SEO Keywords */}
+				<p className="hidden">
+					Contact Rishi Photography Kareli, Narsinghpur Wedding
+					Photographer Contact, Pre Wedding Photographer Madhya
+					Pradesh WhatsApp, Wedding Studio Address Kareli MP, Rishi
+					Photography Booking Form.
+				</p>
 			</div>
 		</section>
 	);

@@ -1,32 +1,31 @@
 import "./global.css";
 
 export const metadata = {
-	title: "Wedding Photographer in Madhya Pradesh | Capturing Your Love Story",
+	title: "Best Wedding Photographer in Kareli | Narsinghpur, Madhya Pradesh",
 	description:
-		"Professional wedding photographer in Madhya Pradesh offering candid, traditional, and cinematic photography for weddings, pre-weddings, and receptions.",
+		"Professional wedding photographer in Kareli, Narsinghpur (MP). Candid, cinematic, and traditional photography capturing beautiful wedding memories.",
 	keywords: [
-		"Wedding Photographer",
-		"Wedding Photographer in Madhya Pradesh",
-		"Best Wedding Photographer in India",
-		"Candid Wedding Photography",
-		"Pre Wedding Photoshoot",
-		"Traditional Wedding Photography",
-		"Drone Wedding Photography",
-		"Madhya Pradesh Wedding Studio",
+		"Wedding Photographer in Kareli",
+		"Best Wedding Photographer in Kareli Narsinghpur",
+		"Candid Wedding Photography Kareli",
+		"Pre Wedding Photographer in Narsinghpur",
+		"Traditional Wedding Photographer in MP",
+		"Wedding Studio in Kareli",
+		"Madhya Pradesh Wedding Photographer",
 	],
 	authors: [{ name: "Rishi Photography" }],
 	openGraph: {
-		title: "Wedding Photographer in Madhya Pradesh | Rishi Photography",
+		title: "Wedding Photographer in Kareli | Rishi Photography",
 		description:
-			"Capturing love, laughter, and timeless wedding moments across Madhya Pradesh. Candid, cinematic, and traditional photography by Rishi Photography.",
-		url: "https://rishi-photogrpahy.vercel.app/",
+			"Capture your wedding memories with Kareli’s top wedding photographer. Serving Narsinghpur, Jabalpur, and nearby Madhya Pradesh regions.",
+		url: "https://rishi-photography.vercel.app",
 		siteName: "Rishi Photography",
 		images: [
 			{
-				url: "https://rishi-photogrpahy.vercel.app/og-image.jpg",
+				url: "https://rishi-photography.vercel.app/og-image.jpg",
 				width: 1200,
 				height: 630,
-				alt: "Wedding Photographer in Madhya Pradesh",
+				alt: "Best Wedding Photographer in Kareli Narsinghpur",
 			},
 		],
 		locale: "en_IN",
@@ -34,10 +33,10 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Wedding Photographer in Madhya Pradesh",
+		title: "Top Wedding Photographer in Kareli - Rishi Photography",
 		description:
-			"Award-winning wedding photographer capturing love stories across India.",
-		images: ["https://rishi-photogrpahy.vercel.app/og-image.jpg"],
+			"Award-winning wedding photography in Kareli, Narsinghpur (MP). Candid, cinematic, and traditional photoshoots.",
+		images: ["https://rishi-photography.vercel.app/og-image.jpg"],
 	},
 };
 
@@ -52,24 +51,44 @@ export default function RootLayout({ children }) {
 						"@context": "https://schema.org",
 						"@type": "LocalBusiness",
 						name: "Rishi Photography",
-						image: "https://rishi-photogrpahy.vercel.app/og-image.jpg",
-						url: "https://rishi-photogrpahy.vercel.app/",
-						telephone: "+91-9977879238",
+						image: "https://rishi-photography.vercel.app/og-image.jpg",
+						"@id": "https://rishi-photography.vercel.app",
+						url: "https://rishi-photography.vercel.app",
+						telephone: "+91-9876543210",
 						address: {
 							"@type": "PostalAddress",
-							streetAddress: "123 Wedding Lane",
-							addressLocality: "Bhopal",
+							streetAddress: "Main Road, Kareli",
+							addressLocality: "Kareli",
 							addressRegion: "Madhya Pradesh",
-							postalCode: "462001",
+							postalCode: "487221",
 							addressCountry: "IN",
 						},
-						priceRange: "₹₹₹",
+						geo: {
+							"@type": "GeoCoordinates",
+							latitude: 22.9167,
+							longitude: 79.0667,
+						},
+						areaServed: [
+							"Kareli",
+							"Narsinghpur",
+							"Jabalpur",
+							"Pipariya",
+							"Hoshangabad",
+							"Madhya Pradesh",
+						],
+						openingHours: "Mo-Su 09:00-21:00",
 						sameAs: [
-							"https://www.instagram.com/rishi_photography_55",
-							"https://facebook.com/rishiphotography",
+							"https://www.instagram.com/rishi_photography_55?igsh=MXUyaG9tanpzM2lx",
+							"https://facebook.com/rishi-photography",
 						],
 						description:
-							"Professional wedding photographer in Madhya Pradesh specializing in candid, traditional, and cinematic photography.",
+							"Professional wedding photographer in Kareli (Narsinghpur, MP). Specializing in candid, cinematic, and pre-wedding photography.",
+						priceRange: "₹₹₹",
+						aggregateRating: {
+							"@type": "AggregateRating",
+							ratingValue: "5",
+							reviewCount: "120",
+						},
 					}),
 				}}></script>
 		</html>

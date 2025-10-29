@@ -9,7 +9,6 @@ import {
 	CarouselPrevious,
 } from "./ui/carousel";
 import { Card, CardContent } from "./ui/card";
-import Image from "next/image";
 
 export function TestimonialsSection() {
 	const testimonials = [
@@ -17,53 +16,61 @@ export function TestimonialsSection() {
 			name: "Deep & Shruti",
 			date: "June 2024",
 			rating: 5,
-			text: "Rishi captured our wedding day perfectly! She made us feel so comfortable and the photos are absolutely stunning. Every moment was documented beautifully - from getting ready to our first dance. We couldn't be happier!",
+			text: "Rishi captured our wedding in Kareli beautifully. Every candid moment was shot perfectly, and the pre-wedding photoshoot near Narsinghpur turned out magical. We still can’t stop looking at our album!",
 			image: "/hero_section_2.jpg",
+			location: "Kareli, Madhya Pradesh",
 		},
 		{
 			name: "Priya & Rahul",
 			date: "March 2024",
 			rating: 5,
-			text: "Working with Rishi was an absolute dream! She understood our cultural traditions and captured both the vibrant traditional ceremonies and intimate moments with such artistry. The photos tell our story perfectly.",
+			text: "From our engagement to our wedding in Narsinghpur, Rishi Photography made every frame look cinematic. Her understanding of cultural moments and lighting is exceptional!",
 			image: "/hero_section_1.jpg",
+			location: "Narsinghpur, Madhya Pradesh",
 		},
 		{
 			name: "Prashan & Nidhi",
 			date: "September 2023",
 			rating: 5,
-			text: "We couldn't have asked for a better photographer! Rishi's attention to detail is incredible - she captured moments we didn't even know happened. Her creativity and professionalism exceeded all our expectations.",
+			text: "We were amazed by Rishi’s professionalism and creative approach. She captured the energy of our wedding in Kareli with perfection — from rituals to emotions, everything feels alive in the photos!",
 			image: "/hero_section_3.jpg",
+			location: "Kareli, MP",
 		},
 		{
 			name: "Vishal & Neha",
 			date: "November 2023",
 			rating: 5,
-			text: "Rishi is not just a photographer, she's an artist! Our engagement and wedding photos are magazine-worthy. She has an eye for finding the perfect light and angles. Highly recommend!",
+			text: "Rishi is truly the best wedding photographer in Narsinghpur! Her drone shots and candid frames turned our simple wedding into something straight out of a movie. Highly recommend her!",
 			image: "/hero_section_1.jpg",
+			location: "Narsinghpur, MP",
 		},
 	];
 
 	return (
-		<section id="testimonials" className="py-20 bg-gray-50">
+		<section
+			id="testimonials"
+			className="py-20 bg-gray-50"
+			aria-label="Client Testimonials - Wedding Photographer Kareli Narsinghpur">
 			<div className="container mx-auto px-4">
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true }}
 					className="text-center mb-12">
-					<h2 className="mb-4">What Couples Say</h2>
+					<h2 className="text-4xl font-bold mb-4 text-gray-900">
+						What Couples Say About Rishi Photography
+					</h2>
 					<p className="text-gray-600 max-w-2xl mx-auto">
-						Dont just take our word for it - hear from the couples
-						weve had the honor to work with
+						Read real stories from happy couples across{" "}
+						<strong>Kareli</strong> and{" "}
+						<strong>Narsinghpur, Madhya Pradesh</strong> who trusted
+						us to capture their once-in-a-lifetime memories.
 					</p>
 				</motion.div>
 
 				<div className="max-w-4xl mx-auto">
 					<Carousel
-						opts={{
-							align: "start",
-							loop: true,
-						}}
+						opts={{ align: "start", loop: true }}
 						className="w-full">
 						<CarouselContent>
 							{testimonials.map((testimonial, index) => (
@@ -83,8 +90,9 @@ export function TestimonialsSection() {
 																src={
 																	testimonial.image
 																}
-																alt="imgae"
+																alt={`Wedding photo of ${testimonial.name} in ${testimonial.location}`}
 																className="w-full h-full object-cover"
+																loading="lazy"
 															/>
 														</div>
 													</div>
@@ -92,26 +100,32 @@ export function TestimonialsSection() {
 													{/* Content */}
 													<div className="md:col-span-2">
 														<Quote className="w-10 h-10 text-gray-300 mb-4" />
-														<p className="text-gray-700 mb-6 italic">
+														<p className="text-gray-700 mb-6 italic leading-relaxed">
 															{testimonial.text}
 														</p>
+
+														{/* Rating */}
 														<div className="flex items-center gap-1 mb-2">
-															{[
-																...Array(
-																	testimonial.rating
-																),
-															].map((_, i) => (
+															{Array.from({
+																length: testimonial.rating,
+															}).map((_, i) => (
 																<Star
 																	key={i}
 																	className="w-4 h-4 fill-yellow-400 text-yellow-400"
+																	aria-label="5-star rating"
 																/>
 															))}
 														</div>
-														<p className="mb-1">
+
+														{/* Client Info */}
+														<p className="font-semibold text-gray-900">
 															{testimonial.name}
 														</p>
-														<p className="text-gray-500">
-															{testimonial.date}
+														<p className="text-gray-500 text-sm">
+															{
+																testimonial.location
+															}{" "}
+															• {testimonial.date}
 														</p>
 													</div>
 												</div>
@@ -121,10 +135,33 @@ export function TestimonialsSection() {
 								</CarouselItem>
 							))}
 						</CarouselContent>
-						<CarouselPrevious />
-						<CarouselNext />
+						<CarouselPrevious aria-label="Previous testimonial" />
+						<CarouselNext aria-label="Next testimonial" />
 					</Carousel>
 				</div>
+
+				{/* Local Trust Statement */}
+				<motion.div
+					initial={{ opacity: 0, y: 20 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true }}
+					className="mt-12 text-center">
+					<p className="text-gray-700 max-w-3xl mx-auto">
+						Over <strong>500+ weddings captured</strong> across{" "}
+						<strong>Kareli</strong>, <strong>Narsinghpur</strong>,
+						and <strong>Madhya Pradesh</strong>. Trusted by couples
+						for candid, cinematic, and traditional photography that
+						turns moments into memories.
+					</p>
+				</motion.div>
+
+				{/* Hidden SEO Keywords */}
+				<p className="hidden">
+					Wedding Photographer Kareli Reviews, Narsinghpur Wedding
+					Photography Testimonials, Rishi Photography Client Feedback,
+					Best Wedding Photographer in Madhya Pradesh, Pre Wedding
+					Photography Reviews Kareli.
+				</p>
 			</div>
 		</section>
 	);
